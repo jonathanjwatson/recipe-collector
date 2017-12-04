@@ -1,4 +1,6 @@
-html *
-{
+body{
    font-family: Oswald;
+}
+#add-new-input{
+    width:20em;
 }
