@@ -1,6 +1,6 @@
 $(document).ready(function() {
     
-    let ingredientArray = ["noodles", "ground beef", "2 cans of tomatoes"];
+    let ingredientArray = [];
 
     addIngredientToArray = (newIngredientToAdd) => {
         ingredientArray.push(newIngredientToAdd);
@@ -30,8 +30,12 @@ $(document).ready(function() {
     getIngredientsFromLocalStorage = () => {
         let ingredientArrayString = localStorage.getItem("ingredients");
         let ingredientArrayArray = JSON.parse(ingredientArrayString)
-        if(ingredientArrayArray)
-        ingredientArray = ingredientArrayArray;
+        if(ingredientArrayArray){
+            ingredientArray = ingredientArrayArray;
+        } else{
+            ingredientArray = [];
+        }
+        
     }
     //Create a function that gets your ingredient array back from local storage
         //Grab the string and parse it into an array
