@@ -13,7 +13,22 @@ $(document).ready(function() {
         })
     }
 
-    addIngredientsToRecipe();
+    addIngredientArrayToLocalStorage = () => {
+        ingredientArrayString = JSON.stringify(ingredientArray);
+        localStorage.setItem("ingredients", ingredientArrayString);
+    }
+
+    getIngredientArrayFromLocalStorage = () => {
+        let ingredientArrayString = localStorage.getItem("ingredients");
+        if(ingredientArrayString){
+            ingredientArray = JSON.parse(ingredientArrayString);
+        } else{
+            ingredientArray = [];
+        }
+        addIngredientsToRecipe();
+    }
+
+    getIngredientArrayFromLocalStorage();
 })
 
 $(document).on("click", "#add-new-submit", (e) => {
@@ -21,5 +36,7 @@ $(document).on("click", "#add-new-submit", (e) => {
     let newIngredient = $("#add-new-input").eq(0).val().trim();
     $("#add-new-input").val("");
     addIngredientToArray(newIngredient);
-    addIngredientsToRecipe();
+    addIngredientArrayToLocalStorage();
+    getIngredientArrayFromLocalStorage();
+    
 })
