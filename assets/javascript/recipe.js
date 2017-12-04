@@ -1,16 +1,16 @@
 $(document).ready(function() {
+    
     let ingredientArray = ["noodles", "ground beef", "2 cans of tomatoes"];
+
+    addIngredientToArray = (newIngredientToAdd) => {
+        ingredientArray.push(newIngredientToAdd);
+    }
 
     addIngredientsToRecipe = () => {
         $("#ingredients").empty()
         ingredientArray.forEach((ingredient, index) => {
             $("#ingredients").append(`<p class="ingredient">${ingredient}</p>`)
-
         })
-    }
-
-    addIngredientToArray = (newIngredientToAdd) => {
-        ingredientArray.push(newIngredientToAdd);
     }
 
     addIngredientsToRecipe();
