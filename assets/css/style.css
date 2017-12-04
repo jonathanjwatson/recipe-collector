@@ -1,6 +1,8 @@
 body{
    font-family: Oswald;
+   margin-left:1.5em;
 }
 #add-new-input{
     width:20em;
+    background-color:#a7a7a7;
 }
