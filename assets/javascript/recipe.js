@@ -13,8 +13,20 @@ $(document).ready(function() {
         })
     }
 
+    //Create a function that adds your ingredient array to local storage
+        //grab the array and stringify it
+        //set it to local storage
+
+    //Create a function that gets your ingredient array back from local storage
+        //Grab the string and parse it into an array
+        //If/Else Statement
+        //Set the array variable
+        //Add ingredients to recipe
+
     addIngredientsToRecipe();
-})
+    //Call the Get from Local Storage Function instead
+
+});
 
 $(document).on("click", "#add-new-submit", (e) => {
     e.preventDefault();
@@ -22,4 +34,6 @@ $(document).on("click", "#add-new-submit", (e) => {
     $("#add-new-input").val("");
     addIngredientToArray(newIngredient);
     addIngredientsToRecipe();
-})
+    //Add ingredients to Local Storage
+    //Get ingredients from Local Storage and update page.
+});
