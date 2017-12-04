@@ -9,7 +9,7 @@ $(document).ready(function() {
     addIngredientsToRecipe = () => {
         $("#ingredients").empty()
         ingredientArray.forEach((ingredient, index) => {
-            $("#ingredients").append(`<p class="ingredient">${ingredient}</p>`)
+            $("#ingredients").append(`<p class="ingredient" data-ingredient=${index}>${ingredient}</p>`)
         })
     }
 
